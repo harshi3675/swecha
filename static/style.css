@@ -1,0 +1,11 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/static/style.css b/static/style.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..7edc34b87ff4097b512cf58644d560357d7e9064
+--- /dev/null
++++ b/static/style.css
+@@ -0,0 +1 @@
++:root{font-family:Inter,system-ui,sans-serif;color:#172033;background:#f5f7fb}body{margin:0}.nav{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem 6vw;background:#173b78;color:white;flex-wrap:wrap}.nav a{color:white;text-decoration:none;margin-left:1rem}.brand{font-weight:800;font-size:1.2rem;margin-left:0!important}.container{max-width:1100px;margin:auto;padding:2rem 1rem}.hero,.card,article{background:white;border-radius:18px;padding:1.5rem;box-shadow:0 8px 30px #1d3b6d14}.hero{padding:3rem 2rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:1rem 0}.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;align-items:end}.narrow{max-width:440px;margin:auto}label{display:grid;gap:.35rem;margin:.7rem 0}input,select,textarea{padding:.8rem;border:1px solid #cbd5e1;border-radius:10px;font:inherit}textarea{min-height:95px}button,.button{display:inline-block;background:#1f6feb;color:white;border:0;border-radius:999px;padding:.8rem 1.1rem;text-decoration:none;font-weight:700;cursor:pointer}.secondary{background:#475569}.actions{display:flex;gap:1rem;flex-wrap:wrap}.flash,.notice{padding:1rem;border-radius:12px;background:#e0f2fe}.error{background:#fee2e2}.success{background:#dcfce7}.muted{color:#64748b}.rating{display:flex;gap:1rem;flex-wrap:wrap}.feedback{border:1px solid #e2e8f0;box-shadow:none;margin:1rem 0}.response{background:#f1f5f9;padding:.8rem;border-radius:10px}.inline{display:flex;gap:.5rem;flex-wrap:wrap}.inline input{flex:1}.tiny{display:inline}fieldset{border:1px solid #e2e8f0;border-radius:12px;margin:1rem 0}@media(max-width:650px){.nav{display:block}.nav a{display:inline-block;margin:.4rem}.hero{padding:1.5rem}.container{padding:1rem}.inline{display:grid}}
+ 
+EOF
+)
