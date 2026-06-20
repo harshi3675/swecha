@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}
+<section class="hero"><h1>Anonymous student feedback for every subject</h1><p>Students submit confidential feedback without logging in. Teachers review categorized feedback and sentiment. Admins manage questions, teachers, classes, and feedback availability.</p><div class="actions"><a class="button" href="{{ url_for('student') }}">Give Feedback</a><a class="button secondary" href="{{ url_for('login') }}">Staff Login</a></div></section>
+<div class="grid"><article><h3>Student</h3><p>Select branch, year, and section, then review each teacher subject-by-subject.</p></article><article><h3>Teacher</h3><p>Filter by year, branch, section, and subject. Respond with a custom or default thank-you message.</p></article><article><h3>Admin</h3><p>Anonymous feedback is read-only. Manage questions and teacher access.</p></article></div>
+{% endblock %}
