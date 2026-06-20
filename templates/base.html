@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>College Feedback</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav class="nav"><a href="{{ url_for('index') }}" class="brand">College Feedback</a><div><a href="{{ url_for('student') }}">Student</a>{% if current_user.is_authenticated %}<a href="{{ url_for('teacher') if current_user.role == 'teacher' else url_for('admin') }}">Dashboard</a><a href="{{ url_for('logout') }}">Logout</a>{% else %}<a href="{{ url_for('login') }}">Teacher/Admin Login</a>{% endif %}</div></nav>
+<main class="container">
+{% with messages = get_flashed_messages(with_categories=true) %}{% for category, message in messages %}<p class="flash {{ category }}">{{ message }}</p>{% endfor %}{% endwith %}
+{% block content %}{% endblock %}
+</main>
+</body>
+</html>
